@@ -1,11 +1,14 @@
 import { useState } from 'react';
 import { sendMessage, isTyping } from 'react-chat-engine';
-import { sendOutlined, PictureOutlined, SendOutlined } from '@ant-design/icons';
+import { PictureOutlined, SendOutlined } from '@ant-design/icons';
 
 const MessageForm = (props) => {
     const [value, setValue] = useState(''); // Initial Value Of Message Is An Empty String
     //Props To Be Reconstructed
     const { chatId, creds} = props;
+    const username = "Vetara";
+
+    const authObject = {'Project-ID': '67ec309f-4db7-4a2d-8c5f-5310843be5c7', 'User-Name': 'Vetara', 'User-Secret': 'MeekendMusic2'}
 
     //Submission Handler
     const handleSubmit = (event) => {
@@ -23,7 +26,8 @@ const MessageForm = (props) => {
     const handleChange = (event) => {
         setValue(event.target.value); //Value Of Input
 
-        isTyping(props, chatId);
+        //isTyping Functionality Not Working Properly For Now
+        isTyping(authObject, chatId, username);
     }
 
     //File Upload Handler

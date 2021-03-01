@@ -51,7 +51,7 @@ const ChatFeed = (props) => {
     //Checking Whether There Are Chats To Render
     if (!chat) {
         return 'Loading...';
-    }
+    } 
 
     return (
         <div className="chat-feed">
